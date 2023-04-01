@@ -1,6 +1,6 @@
 import { DEFAULT_CHAIN_ID, pathFindersContract } from 'config/web3'
 import { TMarketplaceType } from 'pages/Mint/types'
-import { ExplorerDataType, getExplorerLink, getOpenSeaCollectionLink, getRaribleCollectionLink } from 'utils'
+import { ExplorerDataType, getExplorerLink, getOpenSeaCollectionLink } from 'utils'
 
 export const SOCIAL_URLS = {
   discord: 'https://discord.gg/etheriotgames',
@@ -8,13 +8,13 @@ export const SOCIAL_URLS = {
   youtube: 'https://www.youtube.com/channel/UCaO0nqCXuF9tabcDKPIK5Cw',
   twitter: 'https://twitter.com/EtheriotGames',
   etherscan: getExplorerLink(DEFAULT_CHAIN_ID, `${pathFindersContract.addressMap[DEFAULT_CHAIN_ID]}#code`, ExplorerDataType.ADDRESS),
-  opensea: getOpenSeaCollectionLink(DEFAULT_CHAIN_ID, 'pathfindergenesis'),
+  opensea: getOpenSeaCollectionLink(DEFAULT_CHAIN_ID, 'newwavegaming-1'),
 }
 
 export const COLLECTION_URLS: { [marketplace in TMarketplaceType]: string } = {
-  opensea: getOpenSeaCollectionLink(DEFAULT_CHAIN_ID, 'pathfindergenesis'),
-  rarible: getRaribleCollectionLink(DEFAULT_CHAIN_ID, 'pathfinder'),
-  looksrare: `https://looksrare.org/collections/${pathFindersContract.addressMap[DEFAULT_CHAIN_ID]}`,
+  opensea: getOpenSeaCollectionLink(DEFAULT_CHAIN_ID, 'newwavegaming-1'),
+  rarible: `https://rarible.com/collection/${pathFindersContract.addressMap[DEFAULT_CHAIN_ID]}/items`,
+  looksrare: '',
   blur: '',
   'magic eden': '',
 }

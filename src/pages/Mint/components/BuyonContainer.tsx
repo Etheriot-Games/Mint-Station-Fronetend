@@ -7,6 +7,8 @@ import { useHandleExternalLink } from 'hooks'
 import { TNftType } from '../types'
 
 const BuyOnContainer = ({ nftType }: { nftType: TNftType }) => {
+  const { handleOpenExternalLink } = useHandleExternalLink()
+
   return (
     <div className="bg-section-border-light dark:bg-section-border-dark md:bg-section-border-sm-light md:dark:bg-section-border-sm-dark bg-[length:100%_100%] w-full max-w-screen-2xl mx-auto max-md:mt-1 py-8">
       <span className="font-title text-h4 sm:text-h3 md:text-h2 text-secondary dark:text-primary mx-8 md:mx-20 tiny:max-md:pl-6">

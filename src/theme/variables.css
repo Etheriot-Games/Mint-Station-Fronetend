@@ -1,0 +1,15 @@
+:root {
+  --bg-primary: transparent;
+  --text-primary: #000000;
+  --scroll-thumb: #FFFFFF0A;
+  --font-body: "Space Grotesk", Helvetica, Arial, sans-serif;
+  --gradient-primary: linear-gradient(90deg, #FAFF00, #8FFF00);
+}
+
+.dark:root {
+  --bg-primary: #000000;
+  --text-primary: #FFFFFF;
+  --scroll-thumb: #FFFFFF0A;
+  --font-body: "Space Grotesk", Helvetica, Arial, sans-serif;
+  --gradient-primary: linear-gradient(90deg, #FAFF00, #8FFF00);
+}

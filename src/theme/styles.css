@@ -1,0 +1,61 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import './tailwind.css';
+
+@layer base {
+  @font-face {
+    font-family: "Ghost Clan";
+    font-weight: 400;
+    src: url(./fonts/GhostClan/ghostclan.ttf);
+  }
+
+  @font-face {
+    font-family: "Ghost Clan";
+    font-weight: 400;
+    font-style: italic;
+    src: url(./fonts/GhostClan/ghostclanital.ttf);
+  }
+
+  @font-face {
+    font-family: "Ghost Clan 3D";
+    font-weight: 400;
+    src: url(./fonts/GhostClan/ghostclan3d.ttf);
+  }
+
+  @font-face {
+    font-family: "Ghost Clan Expand";
+    font-weight: 400;
+    src: url(./fonts/GhostClan/ghostclanexpand.ttf);
+  }
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html, body, div, span {
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  outline: 0;
+  font: inherit;
+  vertical-align: middle;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  position: relative;
+  min-height: 100%;
+  font-family: var(--font-body);
+  font-size: 1em;
+  font-weight: 400;
+  overflow: hidden auto;
+  max-width: 100%;
+  color: var(--text-primary);
+  background: var(--bg-primary);
+  -webkit-tap-highlight-color: transparent;
+}

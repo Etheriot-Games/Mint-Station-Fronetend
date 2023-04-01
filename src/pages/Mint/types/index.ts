@@ -5,4 +5,4 @@ export enum MintPhase {
 }
 
 export type TNftType = 'pathfinder' | 'battlepass'
-export type TMarketplaceType = 'opensea' | 'rarible' | 'looksrare' | 'blur' | 'magic eden'
+export type TMarketplaceType = 'etheriot' | 'opensea' | 'rarible' | 'looksrare' | 'blur' | 'magic eden'

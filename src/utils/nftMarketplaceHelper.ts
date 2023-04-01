@@ -5,6 +5,11 @@ export const OPENSEA_PREFIXES: { [chainId: number]: string } = {
   [SupportedChainId.GOERLI]: 'testnets.',
 }
 
+export const RARIBLE_PREFIXES: { [chainId: number]: string } = {
+  [SupportedChainId.ETHEREUM]: '',
+  [SupportedChainId.GOERLI]: 'testnet.',
+}
+
 export const getOpenSeaItemLink = (chainId: number, tokenId: number, contractAddress: string) => {
   return `https://${OPENSEA_PREFIXES[chainId] ?? ''}opensea.io/assets/${defaultNetworkMetadata[
     chainId
@@ -13,4 +18,8 @@ export const getOpenSeaItemLink = (chainId: number, tokenId: number, contractAdd
 
 export const getOpenSeaCollectionLink = (chainId: number, collectionName: string) => {
   return `https://${OPENSEA_PREFIXES[chainId] ?? ''}opensea.io/collection/${collectionName}`
+}
+
+export const getRaribleCollectionLink = (chainId: number, collectionName: string) => {
+  return `https://${RARIBLE_PREFIXES[chainId] ?? ''}rarible.com/${collectionName}`
 }

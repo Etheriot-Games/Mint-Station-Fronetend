@@ -2,7 +2,7 @@ import { SupportedChainId } from '../web3Config'
 
 export const pathFindersContract: { addressMap: { [x: number]: string }; abi: any } = {
   addressMap: {
-    [SupportedChainId.ETHEREUM]: '',
+    [SupportedChainId.ETHEREUM]: '0xbfD74758DCC14DB68848e5d455D5e37Ce41CC9B0',
     [SupportedChainId.GOERLI]: '0x51b61982B9D71Ad8Ca31C1f1D8bc014D4f4cA05c', // 0x98abAA84317657d9353623D9a5AAD4a1dA0917Ae
   },
   abi: [
@@ -63,7 +63,7 @@ export const pathFindersContract: { addressMap: { [x: number]: string }; abi: an
     },
     {
       anonymous: false,
-      inputs: [{ indexed: false, internalType: 'enum TestPathNFT.MintPhase', name: 'phase', type: 'uint8' }],
+      inputs: [{ indexed: false, internalType: 'enum PathfinderGenesis.MintPhase', name: 'phase', type: 'uint8' }],
       name: 'LogMintPhaseSet',
       type: 'event',
     },
@@ -152,7 +152,7 @@ export const pathFindersContract: { addressMap: { [x: number]: string }; abi: an
     {
       inputs: [
         { internalType: 'address', name: '', type: 'address' },
-        { internalType: 'enum TestPathNFT.MintPhase', name: '', type: 'uint8' },
+        { internalType: 'enum PathfinderGenesis.MintPhase', name: '', type: 'uint8' },
       ],
       name: 'balancePerType',
       outputs: [{ internalType: 'uint256', name: '', type: 'uint256' }],
@@ -269,7 +269,7 @@ export const pathFindersContract: { addressMap: { [x: number]: string }; abi: an
     {
       inputs: [],
       name: 'mintPhase',
-      outputs: [{ internalType: 'enum TestPathNFT.MintPhase', name: '', type: 'uint8' }],
+      outputs: [{ internalType: 'enum PathfinderGenesis.MintPhase', name: '', type: 'uint8' }],
       stateMutability: 'view',
       type: 'function',
     },
@@ -364,7 +364,7 @@ export const pathFindersContract: { addressMap: { [x: number]: string }; abi: an
       type: 'function',
     },
     {
-      inputs: [{ internalType: 'enum TestPathNFT.MintPhase', name: '_phase', type: 'uint8' }],
+      inputs: [{ internalType: 'enum PathfinderGenesis.MintPhase', name: '_phase', type: 'uint8' }],
       name: 'setMintPhase',
       outputs: [],
       stateMutability: 'nonpayable',

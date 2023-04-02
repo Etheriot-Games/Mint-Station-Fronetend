@@ -1,4 +1,4 @@
-import { defaultNetworkMetadata, SupportedChainId } from 'config/web3'
+import { defaultNetworkMetadata, pathFindersContract, SupportedChainId } from 'config/web3'
 
 export const OPENSEA_PREFIXES: { [chainId: number]: string } = {
   [SupportedChainId.ETHEREUM]: '',
@@ -21,5 +21,5 @@ export const getOpenSeaCollectionLink = (chainId: number, collectionName: string
 }
 
 export const getRaribleCollectionLink = (chainId: number, collectionName: string) => {
-  return `https://${RARIBLE_PREFIXES[chainId] ?? ''}rarible.com/${collectionName}`
+  return `https://${RARIBLE_PREFIXES[chainId] ?? ''}rarible.com/collection/${pathFindersContract.addressMap[chainId]}`
 }

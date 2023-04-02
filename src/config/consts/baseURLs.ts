@@ -13,7 +13,7 @@ export const SOCIAL_URLS = {
 
 export const COLLECTION_URLS: { [marketplace in TMarketplaceType]: string } = {
   etheriot: 'https://market.etheriot.xyz/',
-  opensea: getOpenSeaCollectionLink(DEFAULT_CHAIN_ID, 'pathfindergenesis'),
+  opensea: getOpenSeaCollectionLink(DEFAULT_CHAIN_ID, 'newwavegaming-1'),
   rarible: getRaribleCollectionLink(DEFAULT_CHAIN_ID, 'pathfinder'),
   looksrare: `https://looksrare.org/collections/${pathFindersContract.addressMap[DEFAULT_CHAIN_ID]}`,
   blur: '',

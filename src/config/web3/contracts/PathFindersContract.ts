@@ -3,7 +3,7 @@ import { SupportedChainId } from '../web3Config'
 export const pathFindersContract: { addressMap: { [x: number]: string }; abi: any } = {
   addressMap: {
     [SupportedChainId.ETHEREUM]: '0xbfD74758DCC14DB68848e5d455D5e37Ce41CC9B0',
-    [SupportedChainId.GOERLI]: '0x51b61982B9D71Ad8Ca31C1f1D8bc014D4f4cA05c', // 0x98abAA84317657d9353623D9a5AAD4a1dA0917Ae
+    [SupportedChainId.GOERLI]: '0x98abAA84317657d9353623D9a5AAD4a1dA0917Ae',
   },
   abi: [
     {

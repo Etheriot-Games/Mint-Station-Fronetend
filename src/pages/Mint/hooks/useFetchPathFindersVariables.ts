@@ -30,7 +30,7 @@ export const useFetchPathFindersVariables = () => {
 
       const maxPerWallet = await executeSingleReadContract(
         contract,
-        mintPhase === MintPhase.Whitelist ? 'MAX_MINT_PER_WALLET_WL_PHASE' : 'MAX_MINT_PER_WALLET_PUBLIC_PHASE',
+        mintPhase === MintPhase.Public ? 'MAX_MINT_PER_WALLET_PUBLIC_PHASE' : 'MAX_MINT_PER_WALLET_WL_PHASE',
         []
       )
 

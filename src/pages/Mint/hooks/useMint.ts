@@ -34,7 +34,7 @@ export const useMintAmount = () => {
         if (mintPhase === MintPhase.Paused) return
 
         if (isIncrease) {
-          if (balancePerPhase + mintAmount === maxPerWallet) return
+          if (balancePerPhase + mintAmount >= maxPerWallet) return
           if (!isSufficientBalanceToMint) return
 
           dispatch(setMintAmount(mintAmount + 1))

@@ -131,10 +131,10 @@ const MintIfPossible = () => {
       </div>
     )
 
-  if (!isSufficientBalanceToMint)
+  if (!isSufficientBalanceToMint && isSuccess !== true)
     return <div className="max-sm:w-full md:w-1/2 px-7 py-4 text-red text-center">{'Insufficient ETH balance to mint!'}</div>
 
-  if (balancePerPhase + mintAmount > maxPerWallet)
+  if (balancePerPhase + mintAmount > maxPerWallet && isSuccess !== true)
     return <div className="max-sm:w-full md:w-1/2 px-7 py-4 text-red text-center">{'Max amount exceed to mint!'}</div>
 
   return (

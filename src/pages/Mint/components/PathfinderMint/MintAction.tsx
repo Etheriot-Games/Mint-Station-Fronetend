@@ -1,4 +1,6 @@
-import { useMemo } from 'react'
+import { useEffect, useMemo, useRef } from 'react'
+
+import JSConfetti from 'js-confetti'
 
 import { ReactComponent as CheckIcon } from 'assets/svg/check_icon.svg'
 import { ReactComponent as CopyIcon } from 'assets/svg/copy_icon.svg'
@@ -88,6 +90,39 @@ const MintIfPossible = () => {
   const isLoading = useGetWeb3ReducerValues('isLoading')
   const { mintPrice, isSuccess, txHash, handleMint, handleConfirm } = useMint()
   const { handleOpenExternalLink } = useHandleExternalLink()
+  const canvasRef = useRef(null)
+  const intervalRef = useRef<any>(null)
+
+  useEffect(() => {
+    const handleAnimation = async () => {
+      if (isSuccess === true) {
+        try {
+          const canvas = canvasRef.current
+          if (canvas) {
+            intervalRef.current = setInterval(async () => {
+              const jsConfetti = new JSConfetti({ canvas })
+              await jsConfetti.addConfetti({
+                emojis: ['🎉', '🎉', '🎉', '🎉', '🎉', '🎉'],
+                confettiNumber: 50,
+                emojiSize: 70,
+              })
+              jsConfetti.clearCanvas()
+            }, 2000)
+          }
+        } catch (error) {
+          console.log(error)
+        }
+      } else {
+        intervalRef.current = null
+      }
+    }
+
+    handleAnimation()
+
+    return () => {
+      intervalRef.current = null
+    }
+  }, [isSuccess])
 
   if (mintPhase === MintPhase.Whitelist && whiteListChecker(address!) === false)
     return (
@@ -109,9 +144,10 @@ const MintIfPossible = () => {
       )}
       {isSuccess === true && (
         <div className="max-sm:w-full md:w-1/2 px-7 py-4 text-black dark:text-white text-center">
+          <canvas className="fixed top-0 left-0 w-full h-screen" id="animation" ref={canvasRef} />
           {`Congratulations!, Your Pathfinder minted successfully Check transaction detail here `}
           <span
-            className="font-bold text-secondary dark:text-primary underline underline-offset-4 cursor-pointer hover:scale-105 transition-all duration-300 will-change-transform"
+            className="relative font-bold text-secondary dark:text-primary underline underline-offset-4 cursor-pointer hover:scale-105 transition-all duration-300 will-change-transform"
             onClick={() => handleOpenExternalLink(getExplorerLink(chainId, txHash, ExplorerDataType.TRANSACTION))}
           >
             {'Etherscan.io'}
